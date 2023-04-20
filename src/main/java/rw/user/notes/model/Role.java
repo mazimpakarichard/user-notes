@@ -1,7 +1,8 @@
-package rw.user.notes.domain;
+package rw.user.notes.model;
 
 import java.util.Collection;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +18,11 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@Column
 	private String name;
+	@Column
+	private String description;
+
 	
 	@ManyToMany(mappedBy = "roles")
 	private Collection<User> users;
