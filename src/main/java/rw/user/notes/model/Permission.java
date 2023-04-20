@@ -1,4 +1,4 @@
-package rw.user.notes.model;
+package rw.user.notes.domain;
 
 import java.util.Collection;
 
