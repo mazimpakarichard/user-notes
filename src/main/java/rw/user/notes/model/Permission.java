@@ -1,12 +1,12 @@
 package rw.user.notes.model;
 
-import java.util.Collection;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import rw.user.notes.enums.EUPermissions;
 
 @Entity
 public class Permission {
@@ -15,8 +15,40 @@ public class Permission {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String name;
+	@Enumerated(EnumType.STRING)
+	private EUPermissions name;
 	
-	@ManyToMany(mappedBy = "permissions")
-	private Collection<Role> roles;
+
+	public long getId() {
+		return id;
+	}
+
+
+
+	
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+
+
+	public EUPermissions getName() {
+		return name;
+	}
+
+
+
+
+
+	public void setName(EUPermissions name) {
+		this.name = name;
+	}
+
+
+
+	
+	
 }
